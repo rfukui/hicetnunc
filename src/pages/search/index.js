@@ -660,36 +660,36 @@ export class Search extends Component {
       this.setState({ feed: _.uniqBy([...this.state.feed, ...(res)], 'creator_id') })
     }
 
-    if (e == 'random') {
+    if (e === 'random') {
       let res = await fetchRandomObjkts()
       res = res.filter(e => !arr.includes(e.creator_id))
       this.setState({ feed: [...this.state.feed, ...(res)] })
     }
 
-    if (e == 'gif') {
+    if (e === 'gif') {
       let res = await fetchGifs(this.state.offset)
       res = res.filter(e => !arr.includes(e.creator_id))
       this.setState({ feed: _.uniqBy([...this.state.feed, ...(await fetchGifs(this.state.offset))], 'creator_id') })
     }
 
-    if (e == 'illustration') {
+    if (e === 'illustration') {
       console.log(await fetchTag('illustration'))
     }
 
-    if (e == 'tag') {
+    if (e === 'tag') {
       let res = await fetchTag(this.state.search, this.state.feed[this.state.feed.length - 1].id)
       res = res.filter(e => !arr.includes(e.creator_id))
       this.setState({ feed: _.uniqBy([...this.state.feed, ...(res)], 'creator_id') })
     }
 
-    if (e == 'recent sales') {
+    if (e === 'recent sales') {
       let tokens = await fetchSales(this.state.offset)
       tokens = tokens.map(e => e.token)
       tokens = tokens.filter(e => !arr.includes(e.creator_id))
       this.setState({ feed: _.uniqBy(_.uniqBy([...this.state.feed, ...tokens], 'id'), 'creator_id') })
     }
 
-    if (this.state.select == 'new OBJKTs') {
+    if (this.state.select === 'new OBJKTs') {
       this.latest()
     }
 
@@ -742,7 +742,7 @@ export class Search extends Component {
 
   handleKey = (e) => {
     console.log(this.state.search)
-    if (e.key == 'Enter') this.search(this.state.search)
+    if (e.key === 'Enter') this.search(this.state.search)
   }
 
   render() {

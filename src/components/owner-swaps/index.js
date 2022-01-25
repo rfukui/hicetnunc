@@ -2,7 +2,6 @@ import React from 'react'
 import { Button, Primary, Purchase } from '../button'
 import { walletPreview } from '../../utils/string'
 import styles from './styles.module.scss'
-const axios = require('axios')
 
 const sortByPrice = (a, b) => {
   return Number(a.xtz_per_objkt) - Number(b.xtz_per_objkt)
@@ -21,7 +20,7 @@ export const OwnerSwaps = ({ swaps, handleCollect, acc, cancel, restricted, ban,
           <div>
             {v1.map((e, index) => {
               if (acc) {
-                if (acc.address == e.creator_id) {
+                if (acc.address === e.creator_id) {
                   return (
                     <div>
                       <div key={`${e.id}-${index}`} className={styles.swap}>

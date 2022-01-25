@@ -17,7 +17,7 @@ export default class Sync extends Component {
   static contextType = HicetnuncContext
 
   componentWillMount = async () => {
-    if (this.context.acc == null) {
+    if (this.context.acc === null) {
       await this.context.syncTaquito()
       await this.context.setAccount()
     } else {

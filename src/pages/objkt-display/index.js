@@ -229,13 +229,13 @@ export const ObjktDisplay = () => {
               }}
               className="objkt-display">
               <div className={
-                nft.mime == 'application/x-directory' || nft.mime == 'image/svg+xml' ? 'objktview-zipembed objktview ' + styles.objktview :
+                nft.mime === 'application/x-directory' || nft.mime === 'image/svg+xml' ? 'objktview-zipembed objktview ' + styles.objktview :
                   [(
-                    nft.mime == 'video/mp4' ||
-                      nft.mime == 'video/ogv' ||
-                      nft.mime == 'video/quicktime' ||
-                      nft.mime == 'video/webm' ||
-                      nft.mime == 'application/pdf' ? 'no-fullscreen' : 'objktview ' + styles.objktview
+                    nft.mime === 'video/mp4' ||
+                      nft.mime === 'video/ogv' ||
+                      nft.mime === 'video/quicktime' ||
+                      nft.mime === 'video/webm' ||
+                      nft.mime === 'application/pdf' ? 'no-fullscreen' : 'objktview ' + styles.objktview
                   )]
               }>
                 {renderMediaType({

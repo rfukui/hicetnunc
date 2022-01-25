@@ -17,7 +17,7 @@ const HashToURL = (hash, type) => {
   // when on preview the hash might be undefined.
   // its safe to return empty string as whatever called HashToURL is not going to be used
   // artifactUri or displayUri
-  if (hash == undefined) {
+  if (hash === undefined) {
     return ''
   }
 
@@ -178,7 +178,7 @@ export const renderMediaType = ({
           />
         </Container>
       )
-    /* 3D */
+    /* _3D */
     case MIMETYPE.GLB:
     case MIMETYPE.GLTF:
       parsedArtifactUri = HashToURL(artifactUri, 'IPFS')
@@ -191,7 +191,6 @@ export const renderMediaType = ({
             previewUri={previewUri}
             preview={preview}
             onDetailView={interactive}
-            displayView={displayView}
             displayView={displayView}
           />
         </Container>

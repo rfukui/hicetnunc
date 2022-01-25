@@ -1,6 +1,6 @@
 import { PATH } from '../../../constants'
 import { walletPreview } from '../../../utils/string'
-import { Button, Primary } from '../../button'
+import { Primary } from '../../button'
 import styles from '../styles.module.scss'
 
 export const CollabIssuerInfo = ({address}) => {

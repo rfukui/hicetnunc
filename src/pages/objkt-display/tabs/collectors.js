@@ -15,7 +15,7 @@ export const Collectors = ({ owners, swaps, token_holders, restricted, ban }) =>
   swaps = _.orderBy(swaps, 'price', 'asc')
 
   const handleCollect = (swap_id, price) => {
-    if (acc == null) {
+    if (acc === null) {
       syncTaquito()
       getAccount()
     } else {

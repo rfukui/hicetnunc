@@ -77,7 +77,7 @@ export const GalleryDetail = () => {
             .then(async (data) => {
               let res = []
 
-              if (id == 'thefen') {
+              if (id === 'thefen') {
                 res = await axios.get('https://raw.githubusercontent.com/joanielemercier/The_fen/main/thefen.json').then(res => res.data.data.map(e => e.objkt))
                 res = res.reduce((a, b) => [...a, ...b], [])
                 res = await(fetchObjkts(res))
@@ -105,7 +105,7 @@ export const GalleryDetail = () => {
     setFeed([...feed, ...items.slice(offset, offset + 15)])
     context.feed = _.uniqBy([...context.feed, ...items.slice(offset, offset + 15)], 'id')
     setOffset(offset + 15)
-    if (feed.length == items.lenght) setHasMore(false)
+    if (feed.length === items.lenght) setHasMore(false)
   }
 
   return (

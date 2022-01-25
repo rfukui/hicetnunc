@@ -14,8 +14,8 @@ export const CollabDisplay = () => {
 
     // The collaborator addresses in the contract
     const [collaborators, setCollaborators] = useState([])
-    const [creations, setCreations] = useState([])
-    const [loading, setLoading] = useState(true)
+    const [creations] = useState([])
+    const [loading] = useState(true)
 
     // Core storage data from the KT smart contract
     const [collabData, setCollabData] = useState(null)
@@ -51,8 +51,7 @@ export const CollabDisplay = () => {
         }
     }, [collabData])
 
-    const sortByTokenId = (a, b) => b.token_id - a.token_id
-
+    
     return (
         <Page title="Collaboration">
             <CollabHeader collaborators={collaborators} />

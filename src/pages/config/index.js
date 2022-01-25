@@ -93,7 +93,7 @@ export class Config extends Component {
   }
 
   handleChange = (e) => {
-    if (e.target.name == 'subjkt' && !e.target.checkValidity()) {
+    if (e.target.name === 'subjkt' && !e.target.checkValidity()) {
       console.log(e.target.pattern)
       e.target.value = e.target.value.replace(/[^a-z0-9-._]/g, "")
     }
